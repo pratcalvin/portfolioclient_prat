@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calvin Prat — Création de sites web</title>
+  <meta name="description" content="Calvin Prat, développeur web. Conception et développement de sites web adaptés à chaque activité : restaurants, artisans, commerces, sport, événementiel.">
+  <meta name="theme-color" content="#fafaf9">
+  <meta property="og:title" content="Calvin Prat — Création de sites web">
+  <meta property="og:description" content="Des sites web pensés pour chaque activité.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="header">
+    <nav class="nav glass" aria-label="Navigation principale">
+      <a class="nav__logo" href="#top">CALVIN</a>
+      <ul class="nav__links">
+        <li><a href="#realisations">Réalisations</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero container" id="top">
+      <p class="eyebrow">Calvin Prat · Développeur web</p>
+      <h1 class="hero__title">Des sites web pensés pour chaque activité.</h1>
+      <p class="hero__text">Je conçois et développe des sites web adaptés aux besoins de chaque projet.</p>
+      <div class="hero__actions">
+        <a class="btn btn--dark" href="#realisations">Voir mes réalisations <span class="arrow" aria-hidden="true">→</span></a>
+        <p class="hero__count"><span id="project-count">18</span> sites en ligne</p>
+      </div>
+    </section>
+
+    <!-- PROJETS SÉLECTIONNÉS -->
+    <section class="section container" id="realisations" aria-labelledby="featured-title">
+      <div class="section__head">
+        <h2 class="section__title" id="featured-title">Projets sélectionnés</h2>
+      </div>
+      <div class="featured-grid" id="featured-grid"></div>
+    </section>
+
+    <!-- TOUS LES PROJETS -->
+    <section class="section container" id="projets" aria-labelledby="all-title">
+      <div class="section__head">
+        <h2 class="section__title" id="all-title">Tous les projets</h2>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrer les projets par catégorie">
+        <button class="filter glass is-active" type="button" data-filter="Tous" aria-pressed="true">Tous</button>
+        <button class="filter glass" type="button" data-filter="Restaurants" aria-pressed="false">Restaurants</button>
+        <button class="filter glass" type="button" data-filter="Artisans" aria-pressed="false">Artisans</button>
+        <button class="filter glass" type="button" data-filter="Commerce" aria-pressed="false">Commerce</button>
+        <button class="filter glass" type="button" data-filter="Services" aria-pressed="false">Services</button>
+        <button class="filter glass" type="button" data-filter="Sport" aria-pressed="false">Sport</button>
+        <button class="filter glass" type="button" data-filter="Événementiel" aria-pressed="false">Événementiel</button>
+        <button class="filter glass" type="button" data-filter="Autres" aria-pressed="false">Autres</button>
+      </div>
+      <p class="visually-hidden" id="filter-status" aria-live="polite"></p>
+      <div class="projects-grid" id="projects-grid"></div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section class="section container about" id="a-propos" aria-labelledby="about-title">
+      <h2 class="section__title about__title" id="about-title">Des sites adaptés à chaque projet.</h2>
+      <div class="about__body">
+        <p class="about__text">Je conçois et développe des sites web en m'adaptant à l'activité, aux besoins et à l'identité de chaque projet.</p>
+        <ul class="about__list">
+          <li>Développement web</li>
+          <li>Responsive</li>
+          <li>Design</li>
+          <li>SEO</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section container contact" id="contact" aria-labelledby="contact-title">
+      <h2 class="contact__title" id="contact-title">Vous avez un projet ?</h2>
+      <!-- TODO : remplacer l'adresse e-mail ci-dessous par la vraie adresse de contact -->
+      <a class="btn btn--dark btn--lg" href="mailto:contact@exemple.fr">Me contacter <span class="arrow" aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__brand">CALVIN PRAT</p>
+        <p class="footer__tagline">Création de sites web</p>
+      </div>
+      <nav aria-label="Navigation du pied de page">
+        <ul class="footer__links">
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#a-propos">À propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="footer__copy">© 2026 Calvin Prat</p>
+    </div>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

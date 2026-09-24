@@ -1,0 +1,21 @@
+# Fichiers sensibles
+.env
+.env.*
+*.pem
+*.key
+
+# Dépendances / builds
+node_modules/
+dist/
+
+# Système
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Éditeurs
+.vscode/
+.idea/
+
+# Claude Code (paramètres locaux)
+.claude/
