@@ -1,5 +1,14 @@
+// Largeur d'affichage des images selon le type de carte (pour srcset)
+const SIZES = {
+  large: "(max-width: 1280px) 100vw, 1200px",
+  featured: "(max-width: 640px) 100vw, 600px",
+  grid: "(max-width: 640px) 100vw, (max-width: 960px) 50vw, 400px"
+};
+
 // Crée le HTML d'une carte projet
-function createCard(project, large) {
+// Chaque image existe en 600, 900 et 1200 px de large (ex. nom-600.jpg, nom-900.jpg, nom.jpg)
+function createCard(project, large, sizes) {
+  const base = project.image.replace(/\.jpg$/, "");
   const card = document.createElement("a");
   card.className = "card" + (large ? " card--large" : "");
   card.href = project.url;
@@ -10,6 +19,8 @@ function createCard(project, large) {
   card.innerHTML = `
     <div class="card__media">
       <img src="${project.image}" alt="Aperçu du site ${project.name}"
+           srcset="${base}-600.jpg 600w, ${base}-900.jpg 900w, ${project.image} 1200w"
+           sizes="${sizes}"
            width="1200" height="750" loading="lazy" decoding="async">
     </div>
     <div class="card__body">
@@ -27,13 +38,14 @@ function createCard(project, large) {
 // Projets sélectionnés
 const featuredGrid = document.getElementById("featured-grid");
 PROJECTS.filter((p) => p.featured).forEach((project, index) => {
-  featuredGrid.appendChild(createCard(project, index === 0));
+  const large = index === 0;
+  featuredGrid.appendChild(createCard(project, large, large ? SIZES.large : SIZES.featured));
 });
 
 // Tous les projets
 const projectsGrid = document.getElementById("projects-grid");
 PROJECTS.forEach((project) => {
-  projectsGrid.appendChild(createCard(project, false));
+  projectsGrid.appendChild(createCard(project, false, SIZES.grid));
 });
 document.getElementById("project-count").textContent = PROJECTS.length;
 
